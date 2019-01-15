@@ -13,6 +13,9 @@ import java.util.Set;
 @Entity
 @Table(name = "usr")
 public class User {
+    public User() {
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -30,6 +33,7 @@ public class User {
 
     private Timestamp registrated;
 
+    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Item> items;
 
     private Country fromWhere;
