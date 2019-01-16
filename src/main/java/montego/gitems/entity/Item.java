@@ -25,12 +25,12 @@ public class Item {
 
     private Timestamp year;
 
-    @OneToOne(mappedBy = "itemTypeName", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private ItemType itemType;
+//    @OneToOne(mappedBy = "itemTypeName", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    private ItemType itemType;
 
-    private ItemCategory itemCategory;
-
-    private ItemGenre itemGenre;
+//    private ItemCategory itemCategory;
+//
+//    private ItemGenre itemGenre;
 
     private String comment;
 

@@ -36,9 +36,15 @@ public class User {
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Item> items;
 
-    private Country fromWhere;
+    //private Country fromWhere;
 
+    @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
+    @CollectionTable(name="user_role",joinColumns = @JoinColumn(name="user_id"))
+    @Enumerated(EnumType.STRING)
     private Set<Role> roles;
+
+
+
     //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Subscribes and friends system >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     @ManyToMany
     @JoinTable(

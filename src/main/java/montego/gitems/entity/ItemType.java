@@ -18,7 +18,7 @@ public class ItemType {
     @NotBlank(message = "Type can't be empty")
     private String itemTypeName;
 
-    @OneToOne(mappedBy = "itemCategoryName", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private ItemCategory itemCategory;
+//    @OneToOne(mappedBy = "itemCategoryName", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    private ItemCategory itemCategory;
 
 }

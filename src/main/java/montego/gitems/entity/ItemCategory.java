@@ -19,7 +19,7 @@ public class ItemCategory {
     @NotBlank(message = "Category can't be empty")
     private String itemCategoryName;
 
-    @OneToMany(mappedBy = "itemGenreName", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<ItemGenre> itemGenre;
+//    @OneToMany(mappedBy = "genreName", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    private Set<ItemGenre> itemGenres;
 
 }
