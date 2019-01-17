@@ -5,6 +5,8 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @Entity
@@ -25,12 +27,30 @@ public class Item {
 
     private Timestamp year;
 
-//    @OneToOne(mappedBy = "itemTypeName", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-//    private ItemType itemType;
+    @ManyToMany
+    @JoinTable(
+            name = "item_types",
+            joinColumns = {@JoinColumn(name = "item_id")},
+            inverseJoinColumns = {@JoinColumn(name = "type_id")}
+    )
+    private Set<ItemType> types = new HashSet<>();
 
-//    private ItemCategory itemCategory;
-//
-//    private ItemGenre itemGenre;
+
+    @ManyToMany
+    @JoinTable(
+            name = "item_categories",
+            joinColumns = {@JoinColumn(name = "item_id")},
+            inverseJoinColumns = {@JoinColumn(name = "category_id")}
+    )
+    private Set<ItemCategory> categories = new HashSet<>();
+
+    @ManyToMany
+    @JoinTable(
+            name = "item_genres",
+            joinColumns = {@JoinColumn(name = "item_id")},
+            inverseJoinColumns = {@JoinColumn(name = "genres_id")}
+    )
+    private Set<ItemGenre> genres = new HashSet<>();
 
     private String comment;
 

@@ -15,6 +15,9 @@ public class ItemGenre {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+
+    private String itemGenreName;
+
 //    @NotBlank(message = "Genre can't be empty")
 //    @ManyToOne(fetch = FetchType.EAGER)
 //    @JoinColumn(name = "itemCategory_id")
