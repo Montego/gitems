@@ -1,14 +1,21 @@
 package montego.gitems.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonView;
 import com.sun.jmx.snmp.Timestamp;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
 @Data
+@Getter
+@Setter
 @Entity
 public class Item {
     public Item() {
@@ -17,6 +24,13 @@ public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @Column(updatable = false)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime creationDate;
+    public void setCreationDate(LocalDateTime creationDate) {
+        this.creationDate = creationDate;
+    }
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
