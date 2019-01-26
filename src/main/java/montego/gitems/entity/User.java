@@ -29,7 +29,7 @@ public class User {
 
     //for registration from mail
     private String activationCode;
-    private boolean active;
+    private boolean isActive;
 
     private Timestamp registrated;
 
@@ -38,10 +38,10 @@ public class User {
 
     //private Country fromWhere;
 
-    @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
-    @CollectionTable(name="user_role",joinColumns = @JoinColumn(name="user_id"))
-    @Enumerated(EnumType.STRING)
-    private Set<Role> roles;
+//    @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
+//    @CollectionTable(name="user_role",joinColumns = @JoinColumn(name="user_id"))
+//    @Enumerated(EnumType.STRING)
+//    private Set<Role> roles;
 
 
 
