@@ -15,8 +15,8 @@ public class ItemController {
     private final ItemRepository itemRepository;
 
     @Autowired
-    public ItemController(ItemRepository itemRepository) {
-        this.itemRepository = itemRepository;
+    public ItemController(ItemRepository itemService) {
+        this.itemRepository = itemService;
     }
 
     @GetMapping

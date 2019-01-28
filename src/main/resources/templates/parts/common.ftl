@@ -21,8 +21,10 @@
     </style>
 </head>
 <body>
-    <#include "navbar.ftl">
-<div class="container mt-5">
+
+        <#include "navbar.ftl">
+
+<div>
     <#nested>
 </div>
 

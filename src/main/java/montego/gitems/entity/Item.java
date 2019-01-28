@@ -14,8 +14,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Data
-@Getter
-@Setter
 @Entity
 public class Item {
     public Item() {
@@ -76,6 +74,13 @@ public class Item {
 
     private boolean isImportant;
 
-    private String tag;
+    //private String tag;
+    @ManyToMany
+    @JoinTable(
+            name = "items_tags",
+            joinColumns = {@JoinColumn(name = "item_id")},
+            inverseJoinColumns = {@JoinColumn(name = "tag_id")}
+    )
+    private Set<Tag> tags = new HashSet<>();
 
 }

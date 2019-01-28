@@ -1,0 +1,37 @@
+.greeting_page {
+    height: 100vh;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 340px);
+    grid-auto-rows: 340px;
+    grid-gap: 20px;
+    justify-content: center;
+}
+
+.grid-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    background-color: #eded85;
+}
+.login_form {
+    padding: 30px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    line-height: 1px;
+    background: rgba(0,0,0,0.2);
+}
+
+.login_form.uk-button {
+    color: aliceblue;
+    /*TODO change text color*/
+}
+.login_form.uk-button {
+    color: aliceblue;
+}
